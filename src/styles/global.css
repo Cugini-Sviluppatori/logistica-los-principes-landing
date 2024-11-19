@@ -10,7 +10,6 @@ html {
 
 body {
   font-family: 'Inter', sans-serif; /* Fuente principal */
-  background-color: #f9fafb; /* Fondo gris claro */
   color: #333; /* Texto en gris oscuro */
   margin: 0;
   padding: 0;
@@ -79,14 +78,6 @@ header {
 /* Alternar colores de las secciones */
 section {
   border-bottom: 1px solid #e5e7eb; /* Separación visual */
-}
-
-section:nth-child(odd) {
-  background-color: #f9fafb; /* Fondo gris claro */
-}
-
-section:nth-child(even) {
-  background-color: #ffffff; /* Fondo blanco */
 }
 
 /* Tarjetas y botones */
