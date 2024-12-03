@@ -75,11 +75,6 @@ header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
-/* Alternar colores de las secciones */
-section {
-  border-bottom: 1px solid #e5e7eb; /* Separación visual */
-}
-
 /* Tarjetas y botones */
 .card, button {
   border: 1px solid #e5e7eb; /* Borde gris claro */
