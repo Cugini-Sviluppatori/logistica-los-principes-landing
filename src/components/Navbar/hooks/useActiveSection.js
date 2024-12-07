@@ -4,20 +4,29 @@ const useActiveSection = (sections) => {
   const [activeSection, setActiveSection] = useState(sections[0]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const current = sections.find((section) => {
-        const element = document.getElementById(section);
-        if (!element) return false;
-        const offsetTop = element.offsetTop;
-        const height = element.offsetHeight;
-        return scrollY >= offsetTop - 100 && scrollY < offsetTop + height - 100;
-      });
-      setActiveSection(current || sections[0]);
+    const observerOptions = {
+      root: null,
+      rootMargin: "-50% 0px -50% 0px",
+      threshold: 0,
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const observer = new IntersectionObserver((entries) => {
+      const visibleSection = entries.find((entry) => entry.isIntersecting);
+      if (visibleSection) {
+        setActiveSection(visibleSection.target.id);
+      }
+    }, observerOptions);
+
+    // Observar todas las secciones
+    sections.forEach((section) => {
+      const element = document.getElementById(section);
+      if (element) observer.observe(element);
+    });
+
+    return () => {
+      // Limpiar observadores
+      observer.disconnect();
+    };
   }, [sections]);
 
   return activeSection;
