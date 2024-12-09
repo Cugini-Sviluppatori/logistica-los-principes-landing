@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
-
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Home from "../components/Sections/Home";
