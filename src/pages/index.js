@@ -27,7 +27,8 @@ const IndexPage = () => {
         url="https://www.tusitio.com"
       />
       <Navbar />
-      <main className="min-h-screen bg-gradient-to-br from-sky-500 via-teal-400 to-green-500 text-white">
+      <main className="min-h-screen bg-gradient-to-br from-yellow-500 via-blue-500 to-yellow-700 text-white">
+        {/* <main className="min-h-screen bg-gradient-to-br from-blue-700 via-yellow-400 to-blue-900 text-white"> alterno */}
         <Home />
         <AboutUs />
         <Services />
