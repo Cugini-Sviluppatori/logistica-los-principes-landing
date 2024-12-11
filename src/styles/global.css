@@ -13,7 +13,13 @@ body {
   color: #333; /* Texto en gris oscuro */
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
+
+html, body {
+  height: 100%;
+}
+
 
 /* Tipografía */
 h1, h2, h3, h4, h5, h6 {
@@ -35,7 +41,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none; /* Hover sin subrayado */
   color: #174ea6; /* Azul más oscuro en hover */
 }
 
@@ -70,14 +76,8 @@ section {
 header {
   position: sticky;
   top: 0;
-  background-color: #fff; /* Fondo blanco */
   z-index: 1000; /* Siempre visible */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-}
-
-/* Alternar colores de las secciones */
-section {
-  border-bottom: 1px solid #e5e7eb; /* Separación visual */
 }
 
 /* Tarjetas y botones */
