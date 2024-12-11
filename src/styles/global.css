@@ -41,7 +41,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none; /* Hover sin subrayado */
   color: #174ea6; /* Azul más oscuro en hover */
 }
 
