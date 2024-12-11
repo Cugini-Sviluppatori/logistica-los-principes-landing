@@ -2,7 +2,7 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 
 import { ImageWithDescription } from "../../ImageWithDescription";
-import OptimizedImage from '../../OptimizedImage'
+import OptimizedImage from "../../OptimizedImage";
 
 const AboutUs = () => {
   const data = useStaticQuery(graphql`
@@ -27,7 +27,9 @@ const AboutUs = () => {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
         }
       }
-      imagePersonal: file(relativePath: { eq: "personal_logistica_osprincipes.jpg" }) {
+      imagePersonal: file(
+        relativePath: { eq: "personal_logistica_osprincipes.jpg" }
+      ) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
         }
@@ -59,41 +61,46 @@ const AboutUs = () => {
   ];
 
   return (
-    <section id="about-us" className="h-screen">
-      <div className="flex ">
-        <div>
-          <h1 className="text-3xl font-bold text-yellow-300 pb-6 px-20 flex justify-center">
-            ¿Quiénes somos?
-          </h1>
-          <p className=" text-white lg:text-lg px-20">
-            Somos una empresa de transporte y logística comprometida con brindar
-            soluciones integrales a nivel nacional. Nos especializamos en llegar
-            a cada rincón del país, ofreciendo un servicio confiable y eficiente
-            que satisface las necesidades de nuestros clientes
-          </p>
-          <p className="px-20 mb-10 lg:text-lg">
-            Más que un proveedor, buscamos ser un socio estratégico para cada
-            uno de nuestros clientes, priorizando la excelencia y el compromiso
-            en cada proyecto. Nuestro objetivo es garantizar que sus operaciones
-            logísticas sean exitosas y seguras.
-          </p>
-          <div
-            className="flex px-20"
-            data-aos="fade-up"
-            data-aos-duration="3000"
-          >
-            {descriptionsAboutUs.map((data) => {
-              return (
-                <ImageWithDescription
+    <section id="about-us" className="min-h-screen text-white">
+      <div className="container mx-auto px-6 py-12">
+        <h1 className="text-3xl lg:text-4xl font-bold text-yellow-300 pb-6 text-center">
+          ¿Quiénes somos?
+        </h1>
+        <p className="text-lg lg:text-xl text-center max-w-4xl mx-auto">
+          Somos una empresa de transporte y logística comprometida con brindar
+          soluciones integrales a nivel nacional. Nos especializamos en llegar a
+          cada rincón del país, ofreciendo un servicio confiable y eficiente que
+          satisface las necesidades de nuestros clientes.
+        </p>
+        <p className="text-lg lg:text-xl text-center max-w-4xl mx-auto mb-10">
+          Más que un proveedor, buscamos ser un socio estratégico para cada uno
+          de nuestros clientes, priorizando la excelencia y el compromiso en
+          cada proyecto. Nuestro objetivo es garantizar que sus operaciones
+          logísticas sean exitosas y seguras.
+        </p>
+        {/* Sección responsiva */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Descripciones */}
+          <div className="grid grid-cols-2 gap-6" data-aos="fade-up">
+            {descriptionsAboutUs.map((data, index) => (
+              <ImageWithDescription
+                key={index}
                 {...data}
-                />
-              );
-            })}
+                className="filter invert sepia hue-rotate-180 saturate-200"
+              />
+            ))}
           </div>
-        </div>
-        <div data-aos="fade-left" className=" flex items-center">
-          <div className="w-96 h-96 overflow-hidden rounded-full">
-          <OptimizedImage imageData={data.imagePersonal} className="w-full h-full object-cover"/>
+          {/* Imagen */}
+          <div
+            data-aos="fade-left"
+            className="flex justify-center items-center"
+          >
+            <div className="w-64 h-64 lg:w-96 lg:h-96 overflow-hidden rounded-full shadow-lg">
+              <OptimizedImage
+                imageData={data.imagePersonal}
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -13,11 +13,11 @@ body {
   color: #333; /* Texto en gris oscuro */
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 html, body {
   height: 100%;
-  overflow-x: hidden;
 }
 
 
