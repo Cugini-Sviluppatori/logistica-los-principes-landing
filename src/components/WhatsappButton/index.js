@@ -3,7 +3,7 @@ import React from "react";
 const WhatsAppButton = () => {
   return (
     <a
-      href="https://wa.me/5491135714900?text=Hola, estoy interesado en sus servicios." // Cambia por tu número de WhatsApp
+      href="https://wa.me/5491136107865?text=Hola, estoy interesado en sus servicios." // remplazar con el texto y numero que nos indique el cliente 
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-all z-20"

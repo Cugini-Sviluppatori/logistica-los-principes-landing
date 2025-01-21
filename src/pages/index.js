@@ -9,7 +9,6 @@ import Contact from "../components/Sections/Contact";
 import SEO from "../components/SEO";
 import WhatsAppButton from "../components/WhatsappButton";
 
-
 const IndexPage = () => {
   useEffect(() => {
     AOS.init({
