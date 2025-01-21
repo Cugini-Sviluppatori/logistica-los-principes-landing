@@ -7,6 +7,8 @@ import AboutUs from "../components/Sections/AboutUs";
 import Services from "../components/Sections/Services";
 import Contact from "../components/Sections/Contact";
 import SEO from "../components/SEO";
+import WhatsAppButton from "../components/WhatsappButton";
+
 
 const IndexPage = () => {
   useEffect(() => {
@@ -35,6 +37,7 @@ const IndexPage = () => {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   );
 };

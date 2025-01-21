@@ -27,7 +27,7 @@ const Home = () => {
       />
 
       {/* Capa de contenido superpuesta */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10 pointer-events-none"></div>
 
       <div className="relative z-20 flex flex-col items-center justify-center text-center px-4 sm:px-8 space-y-12">
         {/* Título y descripción */}
