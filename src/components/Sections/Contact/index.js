@@ -1,11 +1,58 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
+import { validateFieldsContact } from "../../../utils/validations";
+import { sendEmail } from "../../../services/emailJS";
 
 const Contact = () => {
-  const [name, setName] = useState("");
-  console.log(name);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+    cellphone: "",
+    subject: "Consulta web",
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const resetValues = () => {
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+      cellphone: "",
+      subject: "Consulta web",
+    });
+    setErrors({});
+  };
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData({ ...formData, [id]: value });
+    setErrors({ ...errors, [id]: null });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const validationErrors = validateFieldsContact(formData);
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    const response = await sendEmail(formData);
+
+    if (response.success) {
+      alert("El mensaje se envió correctamente.");
+    } else {
+      alert(response.message);
+    }
+    resetValues();
+  };
+
   return (
-    <section id="contact" className="h-screen flex items-center justify-center">
-      <div class="font-[sans-serif] max-w-6xl mx-auto relative  rounded-lg py-6">
+    <section id="contact" className="flex items-center justify-center">
+      <div className="font-[sans-serif] max-w-6xl mx-auto relative rounded-lg py-6">
         <div class="grid lg:grid-cols-3 items-center">
           <div class="grid sm:grid-cols-2 gap-4 z-20 relative lg:left-16 max-lg:px-4">
             <div class="flex flex-col items-center justify-center rounded-lg w-full h-44 p-4 text-center bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]">
@@ -60,7 +107,7 @@ const Contact = () => {
               </svg>
               <h4 class="text-gray-800 text-base font-bold mt-4">Email</h4>
               <p class="text-sm text-gray-600 mt-2">
-                info@translosprincipes.com
+                info@logisticalosprincipes.com
               </p>
             </div>
             <div class="flex flex-col items-center justify-center rounded-lg w-full h-44 p-4 text-center bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]">
@@ -69,64 +116,79 @@ const Contact = () => {
                 viewBox="0 0 24 24"
                 class=" w-10 fill-blue-600"
               >
-                <path
-                  d="M12 7.9a4.1 4.1 0 1 0 4.1 4.1A4.09 4.09 0 0 0 12 7.9m0 6.77A2.67 2.67 0 1 1 14.67 12A2.67 2.67 0 0 1 12 14.67m5.23-6.94a1 1 0 1 1-1-1a1 1 0 0 1 1 1m2.71 1a4.7 4.7 0 0 0-1.29-3.35a4.7 4.7 0 0 0-3.35-1.32C14 4 10 4 8.7 4.06a4.73 4.73 0 0 0-3.35 1.29A4.7 4.7 0 0 0 4.06 8.7C4 10 4 14 4.06 15.3a4.7 4.7 0 0 0 1.29 3.35a4.73 4.73 0 0 0 3.35 1.29c1.32.08 5.28.08 6.6 0a4.7 4.7 0 0 0 3.35-1.29a4.7 4.7 0 0 0 1.29-3.35c.06-1.3.06-5.3 0-6.6Zm-1.7 8a2.7 2.7 0 0 1-1.52 1.52a18 18 0 0 1-4.72.32a18 18 0 0 1-4.71-.32a2.7 2.7 0 0 1-1.52-1.52c-.42-1.06-.33-3.56-.33-4.72s-.09-3.67.33-4.72a2.65 2.65 0 0 1 1.52-1.53A18 18 0 0 1 12 5.44a18 18 0 0 1 4.72.32a2.7 2.7 0 0 1 1.52 1.52c.42 1.06.32 3.56.32 4.72s.1 3.67-.32 4.72Z"
-                />
+                <path d="M12 7.9a4.1 4.1 0 1 0 4.1 4.1A4.09 4.09 0 0 0 12 7.9m0 6.77A2.67 2.67 0 1 1 14.67 12A2.67 2.67 0 0 1 12 14.67m5.23-6.94a1 1 0 1 1-1-1a1 1 0 0 1 1 1m2.71 1a4.7 4.7 0 0 0-1.29-3.35a4.7 4.7 0 0 0-3.35-1.32C14 4 10 4 8.7 4.06a4.73 4.73 0 0 0-3.35 1.29A4.7 4.7 0 0 0 4.06 8.7C4 10 4 14 4.06 15.3a4.7 4.7 0 0 0 1.29 3.35a4.73 4.73 0 0 0 3.35 1.29c1.32.08 5.28.08 6.6 0a4.7 4.7 0 0 0 3.35-1.29a4.7 4.7 0 0 0 1.29-3.35c.06-1.3.06-5.3 0-6.6Zm-1.7 8a2.7 2.7 0 0 1-1.52 1.52a18 18 0 0 1-4.72.32a18 18 0 0 1-4.71-.32a2.7 2.7 0 0 1-1.52-1.52c-.42-1.06-.33-3.56-.33-4.72s-.09-3.67.33-4.72a2.65 2.65 0 0 1 1.52-1.53A18 18 0 0 1 12 5.44a18 18 0 0 1 4.72.32a2.7 2.7 0 0 1 1.52 1.52c.42 1.06.32 3.56.32 4.72s.1 3.67-.32 4.72Z" />
               </svg>
               <h4 class="text-gray-800 text-base font-bold mt-4">Instagram</h4>
               <p class="text-sm text-gray-600 mt-2">logisticalosprincipes</p>
             </div>
           </div>
 
-          <div class="lg:col-span-2 bg-[#0a4275] rounded-lg sm:p-10 p-4 z-10 max-lg:-order-1 max-lg:mb-8">
-            <h2 class="text-3xl text-white text-center font-bold mb-6">
-              Contactanos
+          <div className="lg:col-span-2 bg-[#0a4275] rounded-lg sm:p-10 p-4 z-10 max-lg:-order-1 max-lg:mb-8">
+            <h2 className="text-3xl text-white text-center font-bold mb-6">
+              Contáctanos
             </h2>
-            <form>
-              <div class="max-w-md mx-auto space-y-3">
+            <form onSubmit={handleSubmit}>
+              <div className="max-w-md mx-auto space-y-3">
                 <input
+                  id="name"
                   type="text"
                   placeholder="Nombre"
-                  onChange={(e) => {
-                    setName(e.target.value);
-                  }}
-                  value={name}
-                  class="w-full bg-gray-100 rounded-lg py-3 px-6 text-sm outline-none"
+                  onChange={handleChange}
+                  value={formData.name}
+                  className={`w-full bg-gray-100 rounded-lg py-3 px-6 text-sm outline-none text-black placeholder-gray-500 ${
+                    errors.name ? "border border-red-500" : ""
+                  }`}
                 />
+                {errors.name && (
+                  <p className="text-red-500 text-sm">{errors.name}</p>
+                )}
+
                 <input
+                  id="email"
                   type="email"
                   placeholder="Email"
-                  class="w-full bg-gray-100 rounded-lg py-3 px-6 text-sm outline-none"
+                  onChange={handleChange}
+                  value={formData.email}
+                  className={`w-full bg-gray-100 rounded-lg py-3 px-6 text-sm outline-none text-black placeholder-gray-500 ${
+                    errors.email ? "border border-red-500" : ""
+                  }`}
                 />
+                {errors.email && (
+                  <p className="text-red-500 text-sm">{errors.email}</p>
+                )}
+
                 <input
-                  type="email"
-                  placeholder="Telefono"
-                  class="w-full bg-gray-100 rounded-lg py-3 px-6 text-sm outline-none"
+                  id="cellphone"
+                  type="text"
+                  placeholder="Teléfono"
+                  onChange={handleChange}
+                  value={formData.cellphone}
+                  className={`w-full bg-gray-100 rounded-lg py-3 px-6 text-sm outline-none text-black placeholder-gray-500 ${
+                    errors.cellphone ? "border border-red-500" : ""
+                  }`}
                 />
+                {errors.cellphone && (
+                  <p className="text-red-500 text-sm">{errors.cellphone}</p>
+                )}
+
                 <textarea
+                  id="message"
                   placeholder="Mensaje"
                   rows="6"
-                  class="w-full bg-gray-100 rounded-lg px-6 text-sm pt-3 outline-none"
-                ></textarea>
+                  onChange={handleChange}
+                  value={formData.message}
+                  className={`w-full bg-gray-100 rounded-lg py-3 px-6 text-sm outline-none text-black placeholder-gray-500 ${
+                    errors.message ? "border border-red-500" : ""
+                  }`}
+                />
+                {errors.message && (
+                  <p className="text-red-500 text-sm">{errors.message}</p>
+                )}
+
                 <button
-                  type="button"
-                  class="text-gray-800 w-full relative bg-yellow-400 hover:bg-yellow-500 font-semibold rounded-lg text-sm px-6 py-3 !mt-6"
+                  type="submit"
+                  className="text-gray-800 w-full relative bg-yellow-400 hover:bg-yellow-500 font-semibold rounded-lg text-sm px-6 py-3 !mt-6"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16px"
-                    height="16px"
-                    fill="currentColor"
-                    class="mr-2 inline"
-                    viewBox="0 0 548.244 548.244"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M392.19 156.054 211.268 281.667 22.032 218.58C8.823 214.168-.076 201.775 0 187.852c.077-13.923 9.078-26.24 22.338-30.498L506.15 1.549c11.5-3.697 24.123-.663 32.666 7.88 8.542 8.543 11.577 21.165 7.879 32.666L390.89 525.906c-4.258 13.26-16.575 22.261-30.498 22.338-13.923.076-26.316-8.823-30.728-22.032l-63.393-190.153z"
-                      clip-rule="evenodd"
-                      data-original="#000000"
-                    />
-                  </svg>
                   Enviar Mensaje
                 </button>
               </div>
