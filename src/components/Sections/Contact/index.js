@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import emailjs from "emailjs-com";
+
 import { validateFieldsContact } from "../../../utils/validations";
 import { sendEmail } from "../../../services/emailJS";
 
@@ -50,12 +50,21 @@ const Contact = () => {
     resetValues();
   };
 
+  const handleNavigation = (url, target = "_blank") => {
+    window.open(url, target);
+  };
+
   return (
     <section id="contact" className="flex items-center justify-center">
       <div className="font-[sans-serif] max-w-6xl mx-auto relative rounded-lg py-6">
         <div class="grid lg:grid-cols-3 items-center">
           <div class="grid sm:grid-cols-2 gap-4 z-20 relative lg:left-16 max-lg:px-4">
-            <div class="flex flex-col items-center justify-center rounded-lg w-full h-44 p-4 text-center bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]">
+            <div
+              class="flex flex-col items-center justify-center rounded-lg w-full h-44 p-4 text-center bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] cursor-pointer"
+              onClick={() =>
+                handleNavigation("https://maps.app.goo.gl/v3rMyzrKKb1fiDPc7")
+              }
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="w-7 fill-blue-600"
@@ -73,7 +82,7 @@ const Contact = () => {
               <h4 class="text-gray-800 text-base font-bold mt-4">Visitanos</h4>
               <p class="text-sm text-gray-600 mt-2">
                 {" "}
-                Ocampo 3858, San Justo, Buenos Aires
+                Camino de Cintura 7600, 9 de Abril
               </p>
             </div>
             <div class="flex flex-col items-center justify-center rounded-lg w-full h-44 p-4 text-center bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]">
@@ -88,7 +97,7 @@ const Contact = () => {
                 ></path>
               </svg>
               <h4 class="text-gray-800 text-base font-bold mt-4">Llamanos</h4>
-              <p class="text-sm text-gray-600 mt-2">+158 996 888</p>
+              <p class="text-sm text-gray-600 mt-2">+54 11 3610-7865</p>
             </div>
             <div class="flex flex-col items-center justify-center rounded-lg w-full h-44 p-4 text-center bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]">
               <svg
@@ -107,10 +116,17 @@ const Contact = () => {
               </svg>
               <h4 class="text-gray-800 text-base font-bold mt-4">Email</h4>
               <p class="text-sm text-gray-600 mt-2">
-                info@logisticalosprincipes.com
+                info@translosprincipes.com
               </p>
             </div>
-            <div class="flex flex-col items-center justify-center rounded-lg w-full h-44 p-4 text-center bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]">
+            <div
+              class="flex flex-col items-center justify-center rounded-lg w-full h-44 p-4 text-center bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] cursor-pointer"
+              onClick={() =>
+                handleNavigation(
+                  "https://www.instagram.com/logisticalosprincipes/"
+                )
+              }
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -119,7 +135,7 @@ const Contact = () => {
                 <path d="M12 7.9a4.1 4.1 0 1 0 4.1 4.1A4.09 4.09 0 0 0 12 7.9m0 6.77A2.67 2.67 0 1 1 14.67 12A2.67 2.67 0 0 1 12 14.67m5.23-6.94a1 1 0 1 1-1-1a1 1 0 0 1 1 1m2.71 1a4.7 4.7 0 0 0-1.29-3.35a4.7 4.7 0 0 0-3.35-1.32C14 4 10 4 8.7 4.06a4.73 4.73 0 0 0-3.35 1.29A4.7 4.7 0 0 0 4.06 8.7C4 10 4 14 4.06 15.3a4.7 4.7 0 0 0 1.29 3.35a4.73 4.73 0 0 0 3.35 1.29c1.32.08 5.28.08 6.6 0a4.7 4.7 0 0 0 3.35-1.29a4.7 4.7 0 0 0 1.29-3.35c.06-1.3.06-5.3 0-6.6Zm-1.7 8a2.7 2.7 0 0 1-1.52 1.52a18 18 0 0 1-4.72.32a18 18 0 0 1-4.71-.32a2.7 2.7 0 0 1-1.52-1.52c-.42-1.06-.33-3.56-.33-4.72s-.09-3.67.33-4.72a2.65 2.65 0 0 1 1.52-1.53A18 18 0 0 1 12 5.44a18 18 0 0 1 4.72.32a2.7 2.7 0 0 1 1.52 1.52c.42 1.06.32 3.56.32 4.72s.1 3.67-.32 4.72Z" />
               </svg>
               <h4 class="text-gray-800 text-base font-bold mt-4">Instagram</h4>
-              <p class="text-sm text-gray-600 mt-2">logisticalosprincipes</p>
+              <p class="text-sm text-gray-600 mt-2">@logisticalosprincipes</p>
             </div>
           </div>
 
