@@ -24,14 +24,15 @@ const SwiperCustom = ({ data }) => {
     return null;
   }
 
+  /** this is necessary for the carousel */
   const duplicatedItems = items.length <= 3 ? [...items, ...items] : items;
 
   const coverflowOptions = {
-    rotate: 50, // Menos rotación para suavizar el efecto
-    stretch: 10, // Ajusta la separación entre las tarjetas
+    rotate: 20, // Menos rotación para suavizar el efecto
+    stretch: 8, // Ajusta la separación entre las tarjetas
     depth: 100, // Reduce la profundidad
     modifier: 1, // Suaviza la intensidad general
-    slideShadows: true, // Mantén las sombras, pero menos intensas
+    slideShadows: false, // Mantén las sombras, pero menos intensas
   };
 
   return (
@@ -48,18 +49,15 @@ const SwiperCustom = ({ data }) => {
           disableOnInteraction: true,
           pauseOnMouseEnter: true,
         }}
-        effect="coverflow"
-        grabCursor={true}
         centeredSlides={true}
-        slidesPerView="auto"
         loop={true}
         breakpoints={{
-          640: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
+          641: { slidesPerView: 1 },
+          769: { slidesPerView: 2 },
+          1025: { slidesPerView: 3 },
+          1441: { slidesPerView: 3 },
         }}
         coverflowEffect={coverflowOptions}
-        className="w-full max-w-7xl mx-auto"
       >
         {duplicatedItems.map((item) => (
           <SwiperSlide

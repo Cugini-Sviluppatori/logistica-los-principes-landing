@@ -1,3 +1,19 @@
-.swiper-button-prev, .swiper-button-next {
-    color: white;
+/* Sombra para las tarjetas laterales */
+.swiper-slide.swiper-slide-prev,
+.swiper-slide.swiper-slide-next {
+  filter: brightness(0.7); /* Oscurece ligeramente las tarjetas laterales */
+  transform: scale(0.9); /* Reduce el tamaño ligeramente */
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Tarjeta central limpia */
+.swiper-slide.swiper-slide-active {
+  filter: none; /* Sin sombra ni oscurecimiento */
+  transform: scale(1); /* Mantén el tamaño normal */
+  z-index: 2; /* Eleva sobre las demás */
+}
+
+/* Desactiva sombras extras para evitar conflictos */
+.swiper-slide {
+  box-shadow: none;
 }

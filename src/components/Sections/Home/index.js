@@ -18,7 +18,10 @@ const Home = () => {
   const image = getImage(data.backgroundImage.childImageSharp.gatsbyImageData);
 
   return (
-    <section className="relative min-h-screen overflow-x-hidden flex justify-center">
+    <section
+      id="home"
+      className="relative min-h-screen overflow-x-hidden flex justify-center"
+    >
       {/* Fondo como imagen */}
       <GatsbyImage
         image={image}
