@@ -100,7 +100,7 @@ const Navbar = () => {
               <li key={section} className="border-b">
                 <a
                   href={`#${section}`}
-                  className={`block p-4 text-gray-600 font-medium hover:bg-gray-100 hover:text-blue-600 transition-all ${
+                  className={`block p-4  text-gray-600 font-medium hover:bg-gray-100 hover:text-blue-600 transition-all ${
                     activeSection === section ? "text-blue-600 font-bold" : ""
                   }`}
                   onClick={() => setIsMenuOpen(false)}
