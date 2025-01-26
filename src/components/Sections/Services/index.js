@@ -19,7 +19,7 @@ const Services = () => {
         <h1 className="text-5xl font-extrabold text-yellow-300 mb-4">
           Nuestros Servicios
         </h1>
-        <p className="text-lg text-white">
+        <p className="text-lg lg:text-xl text-center max-w-4xl mx-auto mt-6">
           En{" "}
           <span className="text-yellow-300 font-bold">
             Logística Los Príncipes
@@ -30,7 +30,7 @@ const Services = () => {
           transporte, ofreciendo servicios personalizados que se adaptan a las
           necesidades específicas de cada cliente.
         </p>
-        <p className="text-lg text-white mt-4">
+        <p className="text-lg lg:text-xl text-center max-w-4xl mx-auto mt-6">
           Ya sea que necesites transporte confiable, almacenamiento seguro o un
           seguimiento detallado, estamos aquí para garantizar que tus
           operaciones logísticas se desarrollen de manera eficiente y sin
