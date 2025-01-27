@@ -11,7 +11,7 @@ const Navbar = () => {
     query {
       logo: file(relativePath: { eq: "logo.jpg" }) {
         childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
     }
