@@ -20,15 +20,11 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-x-hidden flex justify-center"
+      className="relative min-h-screen overflow-x-hidden flex justify-center bg-cover bg-center"
+      style={{
+        backgroundImage: `url(${image.images.fallback.src})`,
+      }}
     >
-      {/* Fondo como imagen */}
-      <GatsbyImage
-        image={image}
-        alt="Fondo de logística"
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-      />
-
       {/* Capa de contenido superpuesta */}
       <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10 pointer-events-none"></div>
 
