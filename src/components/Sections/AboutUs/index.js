@@ -9,29 +9,29 @@ const AboutUs = () => {
     query {
       efficacy: file(relativePath: { eq: "efficacy.png" }) {
         childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
       lightbulb: file(relativePath: { eq: "lightbulb.png" }) {
         childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
       experience: file(relativePath: { eq: "experience.png" }) {
         childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
       trophy: file(relativePath: { eq: "trophy.png" }) {
         childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
       imagePersonal: file(
         relativePath: { eq: "personal_logistica_osprincipes.jpg" }
       ) {
         childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
     }
@@ -62,22 +62,52 @@ const AboutUs = () => {
 
   return (
     <section id="about-us" className="min-h-screen text-white">
-      <div className="container mx-auto px-6 py-12">
+      <div className="container mx-auto px-6 py-12" data-aos="fade-up">
+        {/* Título */}
+
         <h1 className="text-3xl lg:text-4xl font-bold text-yellow-300 pb-6 text-center">
           ¿Quiénes somos?
         </h1>
+
+        {/* Texto principal */}
         <p className="text-lg lg:text-xl text-center max-w-4xl mx-auto">
-          Somos una empresa de transporte y logística comprometida con brindar
-          soluciones integrales a nivel nacional. Nos especializamos en llegar a
-          cada rincón del país, ofreciendo un servicio confiable y eficiente que
-          satisface las necesidades de nuestros clientes.
+          En{" "}
+          <span className="text-yellow-300 font-bold">
+            Logística Los Príncipes
+          </span>
+          , somos una empresa de transporte y logística comprometida con brindar
+          <span className="text-yellow-300 font-bold">
+            {" "}
+            soluciones integrales
+          </span>{" "}
+          a nivel nacional. Nos especializamos en llegar a cada rincón del país,
+          ofreciendo un servicio confiable y eficiente que satisface las
+          necesidades de nuestros clientes.
+        </p>
+
+        {/* Historia */}
+        <p className="text-lg lg:text-xl text-center max-w-4xl mx-auto mt-6">
+          Con{" "}
+          <span className="text-yellow-300 font-bold">
+            más de 30 años de experiencia
+          </span>{" "}
+          en el rubro, comenzamos como una{" "}
+          <span className="text-yellow-300 font-bold">empresa familiar</span>, y
+          gracias al esfuerzo y la dedicación, nos hemos consolidado como un
+          <span className="text-yellow-300 font-bold">
+            {" "}
+            referente en logística
+          </span>{" "}
+          en todo el país.
         </p>
         <p className="text-lg lg:text-xl text-center max-w-4xl mx-auto mb-10">
-          Más que un proveedor, buscamos ser un socio estratégico para cada uno
-          de nuestros clientes, priorizando la excelencia y el compromiso en
-          cada proyecto. Nuestro objetivo es garantizar que sus operaciones
-          logísticas sean exitosas y seguras.
+          Más que un proveedor, buscamos ser un{" "}
+          <span className="text-yellow-300 font-bold">socio estratégico </span>
+          para cada uno de nuestros clientes, priorizando la excelencia y el
+          compromiso en cada proyecto. Nuestro objetivo es garantizar que sus
+          operaciones logísticas sean exitosas y seguras.
         </p>
+
         {/* Sección responsiva */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Descripciones */}
@@ -90,6 +120,7 @@ const AboutUs = () => {
               />
             ))}
           </div>
+
           {/* Imagen */}
           <div
             data-aos="fade-left"

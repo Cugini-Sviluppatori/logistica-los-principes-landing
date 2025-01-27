@@ -1,9 +1,9 @@
 import emailjs from "emailjs-com";
 
 export const sendEmail = async (formData) => {
-  const serviceId = "service_bkjiamj";
-  const templateId = "template_kjqj65s";
-  const userId = "Y4D4ACFH1CgBbzx5i";
+  const serviceId = process.env.GATSBY_EMAILJS_SERVICE_ID;
+  const templateId = process.env.GATSBY_EMAILJS_TEMPLATE_ID;
+  const userId = process.env.GATSBY_EMAILJS_USER_ID;
 
   try {
     await emailjs.send(serviceId, templateId, formData, userId);
