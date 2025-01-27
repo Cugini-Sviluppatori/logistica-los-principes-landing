@@ -6,17 +6,17 @@ export const useLogisticsData = () => {
     query {
       image1: file(relativePath: { eq: "flota_losprincipes.jpg" }) {
         childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
       image2: file(relativePath: { eq: "flota_losprincipes01.jpeg" }) {
         childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
       image3: file(relativePath: { eq: "flota_losprincipes02.jpeg" }) {
         childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
     }
