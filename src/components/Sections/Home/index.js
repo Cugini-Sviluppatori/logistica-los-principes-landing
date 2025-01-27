@@ -9,7 +9,7 @@ const Home = () => {
     query {
       backgroundImage: file(relativePath: { eq: "flota_losprincipes.jpg" }) {
         childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP, AVIF])
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
     }
