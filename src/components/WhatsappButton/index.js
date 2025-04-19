@@ -3,10 +3,10 @@ import React from "react";
 const WhatsAppButton = () => {
   return (
     <a
-      href="https://wa.me/5491136107865?text=Hola, estoy interesado en sus servicios." // remplazar con el texto y numero que nos indique el cliente 
+      href="https://wa.me/5491136107865?text=Hola, me comunico desde su sitio web. ¿Podrían ayudarme con una consulta sobre sus servicios?."
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-all z-20"
+      className="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-all z-50"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

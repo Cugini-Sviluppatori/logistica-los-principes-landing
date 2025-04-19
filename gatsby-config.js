@@ -7,7 +7,7 @@ module.exports = {
   siteMetadata: {
     title: "Logística los Príncipes",
     description:
-      "Pagina de presentacion de servicios para Logistica los Principes",
+      "Página de presentación de servicios para Logística los Príncipes",
     author: "Cugini-Sviluppatori",
     siteUrl: "https://www.logisticalosprincipes.com",
     social: {

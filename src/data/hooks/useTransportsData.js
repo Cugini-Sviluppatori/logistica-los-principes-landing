@@ -38,13 +38,13 @@ export const useTransportsData = () => {
           "Nuestra flota de última generación garantiza entregas rápidas y confiables a nivel nacional, adaptándonos a las necesidades logísticas de tu negocio.",
         image: images[0],
       },
-      {
-        id: uuidv4(),
-        title: "Transporte Internacional",
-        description:
-          "Conecta con el mundo gracias a nuestro servicio de transporte internacional. Ofrecemos soluciones integrales para que tus productos lleguen seguros a cualquier destino.",
-        image: images[1],
-      },
+      // {
+      //   id: uuidv4(),
+      //   title: "Transporte Internacional",
+      //   description:
+      //     "Conecta con el mundo gracias a nuestro servicio de transporte internacional. Ofrecemos soluciones integrales para que tus productos lleguen seguros a cualquier destino.",
+      //   image: images[1],
+      // },
       {
         id: uuidv4(),
         title: "Seguimiento Personalizado",

@@ -123,7 +123,7 @@ const AboutUs = () => {
 
           {/* Imagen */}
           <div
-            data-aos="fade-left"
+            data-aos="fade-right"
             className="flex justify-center items-center"
           >
             <div className="w-64 h-64 lg:w-96 lg:h-96 overflow-hidden rounded-full shadow-lg">
