@@ -11,7 +11,7 @@ const ServiceCard = ({ image, title, description }) => {
       <div className="overflow-hidden rounded-lg">
         <OptimizedImage
           imageData={image.imageData}
-          alt={`flota 01`}
+          alt={`flota los príncipes`}
           className="w-full h-60 object-cover rounded-lg shadow-md border-2 border-yellow-300"
         />
       </div>

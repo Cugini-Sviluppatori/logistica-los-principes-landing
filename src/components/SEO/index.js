@@ -5,8 +5,8 @@ const SEO = ({
   title = "Logística Los Príncipes",
   description = "Especialistas en transporte y soluciones logísticas.",
   keywords = "logística, transporte, carga, soluciones logísticas",
-  image = "/default-image.jpg", // descargar una imagen.
-  url = "https://www.tusitio.com", // www.logistica.losprincipes.com.ar
+  image = "/flota_losprincipes.jpg",
+  url = "https://www.logisticalosprincipes.com", // www.logistica.losprincipes.com.ar
 }) => {
   return (
     <Helmet>

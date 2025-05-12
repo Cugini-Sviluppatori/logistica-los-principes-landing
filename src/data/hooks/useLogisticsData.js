@@ -4,17 +4,32 @@ import { v4 as uuidv4 } from "uuid";
 export const useLogisticsData = () => {
   const data = useStaticQuery(graphql`
     query {
-      image1: file(relativePath: { eq: "flota_losprincipes.jpg" }) {
+      image1: file(relativePath: { eq: "almacenamiento_mercaderia.jpeg" }) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
-      image2: file(relativePath: { eq: "flota_losprincipes01.jpeg" }) {
+      image2: file(relativePath: { eq: "desconsolidado_consolidado.jpeg" }) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
-      image3: file(relativePath: { eq: "flota_losprincipes02.jpeg" }) {
+      image3: file(relativePath: { eq: "control_inventario.jpeg" }) {
+        childImageSharp {
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
+        }
+      }
+      image4: file(relativePath: { eq: "portuario.jpeg" }) {
+        childImageSharp {
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
+        }
+      }
+      image5: file(relativePath: { eq: "polo_ezeiza_9.jpg" }) {
+        childImageSharp {
+          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
+        }
+      }
+      image6: file(relativePath: { eq: "armado_pedido.png" }) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
@@ -26,6 +41,9 @@ export const useLogisticsData = () => {
     { imageData: data.image1.childImageSharp.gatsbyImageData },
     { imageData: data.image2.childImageSharp.gatsbyImageData },
     { imageData: data.image3.childImageSharp.gatsbyImageData },
+    { imageData: data.image4.childImageSharp.gatsbyImageData },
+    { imageData: data.image5.childImageSharp.gatsbyImageData },
+    { imageData: data.image6.childImageSharp.gatsbyImageData },
   ];
 
   return {
@@ -40,7 +58,7 @@ export const useLogisticsData = () => {
       },
       {
         id: uuidv4(),
-        title: "Desconsolidado de Cargas",
+        title: "Desconsolidado y consolidado de Mercadería",
         description:
           "Simplifica la recepción y organización de tus envíos con nuestro servicio de desconsolidado. Optimizamos cada paso para garantizar una entrega rápida y sin contratiempos.",
         image: images[1],
@@ -54,17 +72,24 @@ export const useLogisticsData = () => {
       },
       {
         id: uuidv4(),
-        title: "Armado de Pedidos",
+        title: "Retiro portuario",
         description:
-          "Personalizamos cada pedido según tus especificaciones, asegurando precisión y rapidez en la preparación para maximizar la satisfacción de tus clientes.",
-        image: images[0],
+          "Realizamos el retiro de contenedores con agilidad, experiencia y seguridad. Gestionando turnos para evitar extracostos y que tu mercadería llegue a su destino sin retrasos.",
+        image: images[3],
       },
       {
         id: uuidv4(),
-        title: "Exportaciones e Importaciones",
+        title: "Seguridad 24HS",
         description:
-          "Facilitamos tus operaciones de comercio internacional con un manejo eficiente de trámites aduaneros, asegurando entregas seguras y en tiempo.",
-        image: images[1],
+          "Nos encontramos en el Polo Industrial de Ezeiza, un predio con seguridad las 24 horas que garantiza la protección de tu mercadería en todo momento.",
+        image: images[4],
+      },
+      {
+        id: uuidv4(),
+        title: "Armado de Pedidos",
+        description:
+          "Personalizamos cada pedido según tus especificaciones, asegurando precisión y rapidez en la preparación para maximizar la satisfacción de tus clientes.",
+        image: images[5],
       },
     ],
   };

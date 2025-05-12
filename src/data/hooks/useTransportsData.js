@@ -4,17 +4,17 @@ import { v4 as uuidv4 } from "uuid";
 export const useTransportsData = () => {
   const data = useStaticQuery(graphql`
     query {
-      image1: file(relativePath: { eq: "flota_losprincipes.jpg" }) {
+      image1: file(relativePath: { eq: "transporte_nacional.jpeg" }) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
-      image2: file(relativePath: { eq: "flota_losprincipes01.jpeg" }) {
+      image2: file(relativePath: { eq: "seguimiento_personalizado.jpeg" }) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
-      image3: file(relativePath: { eq: "flota_losprincipes02.jpeg" }) {
+      image3: file(relativePath: { eq: "exportacion_importacion.jpeg" }) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
@@ -38,18 +38,18 @@ export const useTransportsData = () => {
           "Nuestra flota de última generación garantiza entregas rápidas y confiables a nivel nacional, adaptándonos a las necesidades logísticas de tu negocio.",
         image: images[0],
       },
-      // {
-      //   id: uuidv4(),
-      //   title: "Transporte Internacional",
-      //   description:
-      //     "Conecta con el mundo gracias a nuestro servicio de transporte internacional. Ofrecemos soluciones integrales para que tus productos lleguen seguros a cualquier destino.",
-      //   image: images[1],
-      // },
       {
         id: uuidv4(),
         title: "Seguimiento Personalizado",
         description:
           "Conoce el estado de tus envíos en cada momento con nuestro seguimiento en tiempo real. Te mantenemos informado para que tomes decisiones con confianza.",
+        image: images[1],
+      },
+      {
+        id: uuidv4(),
+        title: "Exportaciones e Importaciones",
+        description:
+          "Facilitamos tus operaciones de comercio internacional con un manejo eficiente de trámites aduaneros, asegurando entregas seguras y en tiempo.",
         image: images[2],
       },
     ],

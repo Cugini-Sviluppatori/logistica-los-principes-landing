@@ -11,8 +11,8 @@ module.exports = {
     author: "Cugini-Sviluppatori",
     siteUrl: "https://www.logisticalosprincipes.com",
     social: {
-      twitter: "@losprincipes", // Reemplaza con tu cuenta de Twitter
-      facebook: "logisticalosprincipes", // Página de Facebook
+      twitter: "@losprincipes",
+      facebook: "logisticalosprincipes",
       instagram: "logisticalosprincipes",
     },
   },

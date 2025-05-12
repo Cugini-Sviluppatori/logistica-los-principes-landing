@@ -62,7 +62,7 @@ const Contact = () => {
             <div
               class="flex flex-col items-center justify-center rounded-lg w-full h-44 p-4 text-center bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] cursor-pointer"
               onClick={() =>
-                handleNavigation("https://maps.app.goo.gl/v3rMyzrKKb1fiDPc7")
+                handleNavigation("https://maps.app.goo.gl/KdwXVMWGjJB9CqoJ7")
               }
             >
               <svg
@@ -82,7 +82,7 @@ const Contact = () => {
               <h4 class="text-gray-800 text-base font-bold mt-4">Visitanos</h4>
               <p class="text-sm text-gray-600 mt-2">
                 {" "}
-                Camino de Cintura 7600, 9 de Abril
+                Polo Industrial de Ezeiza
               </p>
             </div>
             <div class="flex flex-col items-center justify-center rounded-lg w-full h-44 p-4 text-center bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)]">
