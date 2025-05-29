@@ -24,7 +24,7 @@ export const useLogisticsData = () => {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
-      5: file(relativePath: { eq: "armado_pedido.png" }) {
+      image5: file(relativePath: { eq: "armado_pedido.png" }) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
