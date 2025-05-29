@@ -14,7 +14,7 @@ export const useTransportsData = () => {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
-      image3: file(relativePath: { eq: "exportacion_importacion.jpeg" }) {
+      image3: file(relativePath: { eq: "portuario.jpeg" }) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
@@ -47,9 +47,9 @@ export const useTransportsData = () => {
       },
       {
         id: uuidv4(),
-        title: "Exportaciones e Importaciones",
+        title: "Retiro portuario",
         description:
-          "Facilitamos tus operaciones de comercio internacional con un manejo eficiente de trámites aduaneros, asegurando entregas seguras y en tiempo.",
+          "Realizamos el retiro de contenedores con agilidad, experiencia y seguridad. Gestionando turnos para evitar extracostos y que tu mercadería llegue a su destino sin retrasos.",
         image: images[2],
       },
     ],

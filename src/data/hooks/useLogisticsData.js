@@ -19,17 +19,12 @@ export const useLogisticsData = () => {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
-      image4: file(relativePath: { eq: "portuario.jpeg" }) {
+      image4: file(relativePath: { eq: "polo_ezeiza_9.jpg" }) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
-      image5: file(relativePath: { eq: "polo_ezeiza_9.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
-        }
-      }
-      image6: file(relativePath: { eq: "armado_pedido.png" }) {
+      5: file(relativePath: { eq: "armado_pedido.png" }) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
@@ -43,7 +38,6 @@ export const useLogisticsData = () => {
     { imageData: data.image3.childImageSharp.gatsbyImageData },
     { imageData: data.image4.childImageSharp.gatsbyImageData },
     { imageData: data.image5.childImageSharp.gatsbyImageData },
-    { imageData: data.image6.childImageSharp.gatsbyImageData },
   ];
 
   return {
@@ -72,24 +66,17 @@ export const useLogisticsData = () => {
       },
       {
         id: uuidv4(),
-        title: "Retiro portuario",
-        description:
-          "Realizamos el retiro de contenedores con agilidad, experiencia y seguridad. Gestionando turnos para evitar extracostos y que tu mercadería llegue a su destino sin retrasos.",
-        image: images[3],
-      },
-      {
-        id: uuidv4(),
         title: "Seguridad 24HS",
         description:
           "Nos encontramos en el Polo Industrial de Ezeiza, un predio con seguridad las 24 horas que garantiza la protección de tu mercadería en todo momento.",
-        image: images[4],
+        image: images[3],
       },
       {
         id: uuidv4(),
         title: "Armado de Pedidos",
         description:
           "Personalizamos cada pedido según tus especificaciones, asegurando precisión y rapidez en la preparación para maximizar la satisfacción de tus clientes.",
-        image: images[5],
+        image: images[4],
       },
     ],
   };
