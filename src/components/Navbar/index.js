@@ -34,7 +34,19 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 transition-all duration-300 bg-white bg-opacity-80 backdrop-blur-md">
       <nav className="container mx-auto flex items-center justify-between p-4">
         {/* Logo */}
-        <a href="/" className="flex items-center space-x-2">
+        <div
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            window.history.pushState(
+              "",
+              document.title,
+              window.location.pathname + window.location.search
+            );
+
+            setIsMenuOpen(false);
+          }}
+          className="flex items-center space-x-2 cursor-pointer"
+        >
           <div className="h-12 w-12 md:h-16 md:w-16 rounded-full overflow-hidden transition-transform duration-300 hover:scale-105">
             <OptimizedImage
               imageData={imageLogo}
@@ -47,7 +59,7 @@ const Navbar = () => {
           <h1 className="m-0 text-xl md:text-2xl font-extrabold text-blue-600 hover:text-blue-700 transition-colors">
             Logística Los Príncipes
           </h1>
-        </a>
+        </div>
 
         {/* Botón hamburguesa para móvil */}
         <button

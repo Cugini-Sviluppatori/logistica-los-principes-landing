@@ -42,7 +42,7 @@ const Services = () => {
         <SwiperCustom data={transportsData} />
       </div>
 
-      <div data-aos="fade-left">
+      <div data-aos="fade-right">
         <SwiperCustom data={logisticsData} />
       </div>
     </section>

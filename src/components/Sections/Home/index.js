@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-x-hidden flex justify-center bg-cover bg-center"
+      className="relative min-h-screen flex justify-center bg-cover bg-center"
       style={{
         backgroundImage: `url(${image.images.fallback.src})`,
       }}
@@ -87,7 +87,7 @@ const Home = () => {
             transition={{ duration: 0.3 }}
           >
             <h3 className="text-xl font-bold mb-2">Transporte Confiable</h3>
-            <p>Flota moderna para transporte nacional e internacional.</p>
+            <p>Flota moderna para transporte nacional.</p>
           </motion.div>
           <motion.div
             className="bg-gray-800 bg-opacity-50 text-white p-6 rounded-lg shadow-lg text-center"

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -24,12 +24,10 @@ const IndexPage = () => {
         title="Logística Los Príncipes"
         description="Logística Los Príncipes. Expertos en transporte y soluciones logísticas personalizadas."
         keywords="logística, transporte, soluciones logísticas, carga"
-        image="https://www.tusitio.com/images/og-image.jpg"
-        url="https://www.tusitio.com"
+        url="https://www.logisticalosprincipes.com"
       />
       <Navbar />
       <main className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-yellow-900 text-white">
-        {/* <main className="min-h-screen bg-gradient-to-br from-gray-800 via-blue-900 to-gray-700 text-white"> */}
         <Home />
         <AboutUs />
         <Services />

@@ -4,17 +4,17 @@ import { v4 as uuidv4 } from "uuid";
 export const useTransportsData = () => {
   const data = useStaticQuery(graphql`
     query {
-      image1: file(relativePath: { eq: "flota_losprincipes.jpg" }) {
+      image1: file(relativePath: { eq: "transporte_nacional.jpeg" }) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
-      image2: file(relativePath: { eq: "flota_losprincipes01.jpeg" }) {
+      image2: file(relativePath: { eq: "seguimiento_personalizado.jpeg" }) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
       }
-      image3: file(relativePath: { eq: "flota_losprincipes02.jpeg" }) {
+      image3: file(relativePath: { eq: "portuario.jpeg" }) {
         childImageSharp {
           gatsbyImageData(placeholder: BLURRED, formats: [AUTO, WEBP])
         }
@@ -40,16 +40,16 @@ export const useTransportsData = () => {
       },
       {
         id: uuidv4(),
-        title: "Transporte Internacional",
+        title: "Seguimiento Personalizado",
         description:
-          "Conecta con el mundo gracias a nuestro servicio de transporte internacional. Ofrecemos soluciones integrales para que tus productos lleguen seguros a cualquier destino.",
+          "Conoce el estado de tus envíos en cada momento con nuestro seguimiento en tiempo real. Te mantenemos informado para que tomes decisiones con confianza.",
         image: images[1],
       },
       {
         id: uuidv4(),
-        title: "Seguimiento Personalizado",
+        title: "Retiro portuario",
         description:
-          "Conoce el estado de tus envíos en cada momento con nuestro seguimiento en tiempo real. Te mantenemos informado para que tomes decisiones con confianza.",
+          "Realizamos el retiro de contenedores con agilidad, experiencia y seguridad. Gestionando turnos para evitar extracostos y que tu mercadería llegue a su destino sin retrasos.",
         image: images[2],
       },
     ],
